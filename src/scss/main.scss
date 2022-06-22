@@ -27,6 +27,7 @@ body {
     box-shadow: 0px 5px 5px 5px black;
 
     &__logo {
+        z-index: 3;
         font-size: 1.5rem;
         font-weight: 800;
         letter-spacing: 0.25rem;
@@ -50,55 +51,82 @@ body {
         cursor: pointer;
     }
 
-    &__mobile {
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
 
-        &menu {
-            display: flex;
-            flex-direction: column;
+    &__mobilemenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100vw;
+        padding-top: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        box-shadow: 0px 5px 5px 5px black;
+        transform: translateY(-400px);
+
+        transition: all 0.4s ease-in;
+        &-active {
+            transform: translateY(0px);
         }
 
-        &hbg {
-            cursor: pointer;
+        .mobile {
+            margin: 0.5em 0;
+            padding: 0.5em 0.5em;
+        }
+    }
 
-            &-line {
-                display: block;
-                height: 3px;
-                width: 30px;
-                margin-bottom: 6px;
-                background-color: white;
-                border-radius: 3px;
+    &__mobilehbg {
+        cursor: pointer;
+        z-index: 3;
 
-                transition: all 0.2s ease-in;
+        &-line {
+            display: block;
+            height: 3px;
+            width: 30px;
+            margin-bottom: 6px;
+            background-color: white;
+            border-radius: 3px;
 
-                &-X {
+            transition: all 0.2s ease-in;
 
-                    height: 4px;
+            &-X {
 
-                    &:nth-child(1) {
-                        transform: translateY(10px) rotate(45deg);
-                    }
+                height: 4px;
 
-                    &:nth-child(2) {
-                        opacity: 0;
-                    }
+                &:nth-child(1) {
+                    transform: translateY(10px) rotate(45deg);
+                }
 
-                    &:nth-child(3) {
-                        transform: translateY(-10px) rotate(-45deg);
-                    }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: translateY(-10px) rotate(-45deg);
                 }
             }
         }
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .navbar__menu {
         display: none;
     }
 }
 
-@media screen and (min-width: 769px){
+@media screen and (min-width: 769px) {
     .navbar__mobile {
+        display: none;
+    }
+    
+    .navbar__mobilehbg {
         display: none;
     }
 }
