@@ -1,4 +1,5 @@
 import React from "react"
+import ContactUsButton from "./ContacUsButton"
 
 function Navbar() {
     const [hamburgerMenu, setHamburgerMenu] = React.useState(true)
@@ -7,21 +8,14 @@ function Navbar() {
         setHamburgerMenu(!hamburgerMenu)
     }
 
-    function contactUs() {
-        console.log('contact button')
-    }
-
     return (
         <nav className="navbar">
-            <a href="/" className="navbar__logo">Travel✈</a>
+            <a href="/" className="navbar__logo travel-logo">Travel✈</a>
             <div className="navbar__menu">
                 <a className="navbar-item" href="/">Home</a>
                 <a className="navbar-item" href="/">Destinations</a>
                 <a className="navbar-item" href="/">Services</a>
-                <button
-                    className="navbar-btn"
-                    onClick={contactUs}
-                >CONTACT US</button>
+                <ContactUsButton />
             </div>
 
             {/* menu for mobile devices */}
@@ -32,10 +26,7 @@ function Navbar() {
                 <a className="navbar-item mobile" href="/">Home</a>
                 <a className="navbar-item mobile" href="/">Destinations</a>
                 <a className="navbar-item mobile" href="/">Services</a>
-                <button
-                    className="navbar-btn mobile"
-                    onClick={contactUs}
-                >CONTACT US</button>
+                <ContactUsButton />
             </div>
             {/* hamburger button to control menu popup on mobile devices */}
             <div
