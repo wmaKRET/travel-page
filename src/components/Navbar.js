@@ -10,11 +10,11 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <a href="/" className="navbar__logo travel-logo">Travel✈</a>
+            <a href="#home" className="navbar__logo travel-logo">Travel✈</a>
             <div className="navbar__menu">
-                <a className="navbar-item" href="/">Home</a>
-                <a className="navbar-item" href="/">Destinations</a>
-                <a className="navbar-item" href="/">Services</a>
+                <a className="navbar-item" href="#home">Home</a>
+                <a className="navbar-item" href="#destinations">Destinations</a>
+                <a className="navbar-item" href="#services">Services</a>
                 <ContactUsButton />
             </div>
 
