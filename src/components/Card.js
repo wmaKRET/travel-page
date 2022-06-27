@@ -10,7 +10,7 @@ function Card(props) {
                 alt={props.name}
             />
             <div className="card__info">
-                <h4>{props.name}</h4>
+                <h2>{props.name}</h2>
                 <p>{props.description}</p>
             </div>
         </div>

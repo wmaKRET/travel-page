@@ -226,24 +226,20 @@ body {
 .destinations {
   height: 100vh;
   width: 100%;
+  padding: 1em 3em;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 3em;
   background-color: #00035c;
   border-top: 2px solid black;
   color: white;
 }
 
 .card {
-  height: 200px;
-  width: 200px;
+  max-height: 400px;
+  width: 100%;
   margin: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,6 +248,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  justify-self: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -263,17 +260,36 @@ body {
 }
 
 .card__image {
-  height: 150px;
+  height: 60%;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 2px whitesmoke solid;
 }
 
 .card__info {
   margin: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   color: #0007c2;
 }
 
-.card__info > h4 {
+.card__info > h2 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   color: #00035c;
+}
+
+.card__info > p {
+  padding: 0.5em;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .card:hover {
